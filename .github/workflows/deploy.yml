@@ -19,10 +19,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
-      # Use npm ci if a lockfile exists; otherwise use npm install
-      - name: Install deps
+      # Install dependencies (works even without package-lock.json)
+      - name: Install dependencies
         run: |
           if [ -f package-lock.json ]; then
             npm ci
@@ -30,7 +29,7 @@ jobs:
             npm install
           fi
 
-      - name: Build
+      - name: Build project
         run: npm run build
 
       - uses: actions/upload-pages-artifact@v3
