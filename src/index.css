@@ -1,0 +1,16 @@
+/* index.css — base styling for the app */
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #0f172a; /* dark blue background */
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
